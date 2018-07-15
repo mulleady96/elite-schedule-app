@@ -38,6 +38,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.refreshFavourites();
+      this.userSettings.initStorage().then(() => this.rootPage = MyTeamsPage);
     });
   }
 
@@ -48,7 +49,7 @@ export class MyApp {
   }
 
   refreshFavourites(){
-    this.favoriteTeams = this.userSettings.getAllFavourites();
+    //this.favoriteTeams = this.userSettings.getAllFavourites();
   }
 
   goToTeam(favorite){

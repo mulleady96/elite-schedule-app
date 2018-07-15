@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { AgmCoreModule } from '@agm/core'; // Google maps library.
+import { SQLite } from '@ionic-native/sqlite';
 
 import { MyApp } from './app.component';
 import { MyTeamsPage } from '../pages/my-teams/my-teams';
@@ -20,6 +21,7 @@ import { EliteApi } from '../providers/elite-api/elite-api';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserSettings } from '../providers/user-settings/user-settings';
+import { SqlStorage } from '../providers/sql-storage/sql-storage';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { UserSettings } from '../providers/user-settings/user-settings';
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
+    SqlStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EliteApi,
     UserSettings
